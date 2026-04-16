@@ -5,12 +5,12 @@ const bcrypt = require("bcrypt");
 const UserSchema = new Schema({
   username: {
     type: String,
-    required: [true, "Please provide username"],
-    unique: true,
+    required: [true, "Please provide (required) username"],
+    unique: [true, "Username must be unique"],
   },
   password: {
     type: String,
-    required: [true, "Please provide password"],
+    required: [true, "Please provide (required) password"],
   },
 });
 

@@ -11,6 +11,7 @@ module.exports = (req, res) => {
       );
 
       req.flash("validationErrors", validationErrors);
+      req.flash("data", req.body);
 
       res.redirect("/auth/register");
     });
