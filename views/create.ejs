@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Clean Blog - Nouveau Post</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="mb-4">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="my-5">
+              <form
+                id="createForm"
+                action="/posts/store"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <div class="form-floating">
+                  <input
+                    class="form-control"
+                    name="title"
+                    id="title"
+                    type="text"
+                    placeholder="Entrez le titre..."
+                    required
+                  />
+                  <label for="title">Titre</label>
+                </div>
+
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    name="body"
+                    id="description"
+                    placeholder="Entrez votre texte..."
+                    style="height: 12rem"
+                    required
+                  ></textarea>
+                  <label for="description">Description</label>
+                </div>
+                <div class="form-floating">
+                  <input
+                    class="form-control"
+                    name="username"
+                    id="username"
+                    type="text"
+                    placeholder="Votre nom..."
+                    required
+                  />
+                  <label for="username">Nom d'utilisateur</label>
+                </div>
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls">
+                    <label>Image</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="image"
+                      name="image"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <br />
+
+                <button
+                  class="btn btn-primary text-uppercase"
+                  id="submitButton"
+                  type="submit"
+                >
+                  Créer le post
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

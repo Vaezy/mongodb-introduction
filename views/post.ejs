@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= blogPost.title %> - My Blog</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav"></nav>
+
+    <header
+      class="masthead"
+      style="
+        background-image: url(&quot;<%= blogPost.image ? &quot;/images/&quot; + blogPost.image : &quot;/assets/img/post-bg.jpg&quot; %>&quot;);
+      "
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="post-heading">
+              <h1><%= blogPost.title %></h1>
+              <h2 class="subheading">Détail du post</h2>
+              <span class="meta">
+                Posté par <a href="#"><%= blogPost.username %></a>
+                le <%= blogPost.datePosted.toDateString() %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto"><%= blogPost.body %></div>
+        </div>
+      </div>
+    </article>
+
+    <hr />
+
+    <footer class="border-top"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
